@@ -17,6 +17,10 @@ router.post("/create-checkout", async (req, res) => {
     }
 
     const preference = new Preference(client);
+    console.log(
+        "Notification URL:",
+        `${process.env.BACKEND_URL}/payments/webhook`
+        );
 
     const result = await preference.create({
       body: {
